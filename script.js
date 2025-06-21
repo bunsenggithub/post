@@ -1,24 +1,24 @@
-// script.js
-
-const container = document.getElementById('postGrid');
+const container = document.getElementById("postGrid");
 
 function createPostElement(post) {
-  const postEl = document.createElement('div');
-  postEl.classList.add('post');
+  const postDiv = document.createElement("div");
+  postDiv.classList.add("post");
 
-  postEl.innerHTML = `
-    <a href="${post.link}" target="_blank">
-      <img src="${post.thumbnail}" alt="${post.title}" class="thumbnail" />
-    </a>
-    <h3>${post.title}</h3>
+  postDiv.innerHTML = `
+    <img src="${post.thumbnail}" alt="${post.title} thumbnail" />
+    <h2>${post.title}</h2>
     <p>${post.description}</p>
-    <a href="${post.link}" target="_blank" class="read-more">Read More</a>
+    <a href="${post.link}" target="_blank" rel="noopener noreferrer">${post.link}</a>
   `;
 
-  return postEl;
+  return postDiv;
 }
 
-// Render posts
-posts.forEach(post => {
-  container.appendChild(createPostElement(post));
-});
+function renderPosts() {
+  posts.forEach(post => {
+    const postEl = createPostElement(post);
+    container.appendChild(postEl);
+  });
+}
+
+renderPosts();
