@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <title>5x5 Post Grid</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="./stylesheet" href="style.css" />
 </head>
 <body>
 
@@ -13,8 +13,8 @@
   <div id="postGrid" class="grid-container"></div>
 
   <!-- Load posts data and script -->
-  <script src="Post.js"></script>
-  <script src="script.js"></script>
+  <script src="./Post.js"></script>
+  <script src="./script.js"></script>
 
 </body>
 </html>
