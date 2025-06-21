@@ -1,59 +1,48 @@
-/* style.css */
-
 body {
   font-family: Arial, sans-serif;
-  margin: 20px;
-}
-
-h1 {
-  text-align: center;
-  margin-bottom: 30px;
+  padding: 20px;
 }
 
 .grid-container {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 20px;
+  gap: 16px;
 }
 
 .post {
-  border: 1px solid #ddd;
+  border: 1px solid #ccc;
   padding: 10px;
-  border-radius: 8px;
-  background: #fafafa;
-  box-shadow: 1px 1px 4px rgba(0,0,0,0.1);
+  box-sizing: border-box;
+  background-color: #fafafa;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  height: 100%;
 }
 
-.post .thumbnail {
+.post img {
   width: 100%;
   height: auto;
-  border-radius: 4px;
-  margin-bottom: 10px;
+  object-fit: cover;
 }
 
-.post h3 {
-  font-size: 1.1em;
-  margin: 5px 0;
-  text-align: center;
+.post h2 {
+  font-size: 1.1rem;
+  margin: 10px 0 5px;
 }
 
 .post p {
-  font-size: 0.9em;
-  color: #555;
-  text-align: center;
   flex-grow: 1;
+  font-size: 0.9rem;
+  margin: 0 0 10px;
 }
 
-.post .read-more {
-  margin-top: 10px;
+.post a {
+  color: #0066cc;
   text-decoration: none;
-  color: #007bff;
-  font-weight: bold;
+  word-break: break-all;
+  font-size: 0.85rem;
 }
 
-.post .read-more:hover {
+.post a:hover {
   text-decoration: underline;
 }
