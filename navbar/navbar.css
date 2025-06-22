@@ -46,7 +46,7 @@
     right: 0;
     background: #1e1e2f;
     width: 200px;
-    display: none;
+    padding: 10px;
   }
 
   .nav-links.active {
