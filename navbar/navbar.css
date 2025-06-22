@@ -99,6 +99,7 @@
     position: static;
     background-color: transparent;
     padding: 0;
+    display: block;
   }
 
   .dropdown-menu li a {
