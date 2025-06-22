@@ -17,7 +17,8 @@ navList.id = "navLinks";
 const navItems = [
   { text: "Home", href: "#" },
   { 
-    text: "Categories", href: "#", dropdown: [
+    text: "Categories", href: "#", 
+    dropdown: [
       { text: "Tech", href: "#" },
       { text: "Travel", href: "#" },
       { text: "Food", href: "#" }
