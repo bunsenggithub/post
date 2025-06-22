@@ -2,47 +2,78 @@
 const navbar = document.createElement("nav");
 navbar.className = "navbar";
 
-// Create the logo
+// Logo
 const logo = document.createElement("div");
 logo.className = "logo";
 logo.textContent = "MyLogo";
 navbar.appendChild(logo);
 
-// Create the nav links list
+// Nav list
 const navList = document.createElement("ul");
 navList.className = "nav-links";
 navList.id = "navLinks";
 
-// Array of nav items
+// Nav items with dropdown for Categories
 const navItems = [
   { text: "Home", href: "#" },
-  { text: "Categories", href: "#" },
+  { 
+    text: "Categories", href: "#", dropdown: [
+      { text: "Tech", href: "#" },
+      { text: "Travel", href: "#" },
+      { text: "Food", href: "#" }
+    ]
+  },
   { text: "About Us", href: "#" },
   { text: "Contact Us", href: "#" }
 ];
 
-// Create and append list items
+// Build nav items
 navItems.forEach(item => {
   const li = document.createElement("li");
-  const a = document.createElement("a");
-  a.href = item.href;
-  a.textContent = item.text;
-  li.appendChild(a);
+
+  if (item.dropdown) {
+    li.className = "dropdown";
+
+    const a = document.createElement("a");
+    a.href = item.href;
+    a.textContent = item.text;
+    li.appendChild(a);
+
+    const dropdownMenu = document.createElement("ul");
+    dropdownMenu.className = "dropdown-menu";
+
+    item.dropdown.forEach(sub => {
+      const subLi = document.createElement("li");
+      const subA = document.createElement("a");
+      subA.href = sub.href;
+      subA.textContent = sub.text;
+      subLi.appendChild(subA);
+      dropdownMenu.appendChild(subLi);
+    });
+
+    li.appendChild(dropdownMenu);
+  } else {
+    const a = document.createElement("a");
+    a.href = item.href;
+    a.textContent = item.text;
+    li.appendChild(a);
+  }
+
   navList.appendChild(li);
 });
 navbar.appendChild(navList);
 
-// Create the menu toggle button (for mobile)
+// Hamburger toggle for mobile
 const menuToggle = document.createElement("div");
 menuToggle.className = "menu-toggle";
 menuToggle.id = "menuToggle";
 menuToggle.innerHTML = "&#9776;";
 navbar.appendChild(menuToggle);
 
-// Append the navbar to the container
+// Append to DOM
 document.getElementById("navbar-container").appendChild(navbar);
 
-// Toggle menu on click
+// Toggle nav visibility
 menuToggle.addEventListener("click", () => {
   navList.classList.toggle("active");
 });
