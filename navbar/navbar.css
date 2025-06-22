@@ -24,6 +24,7 @@
   color: white;
   text-decoration: none;
   transition: color 0.3s;
+  padding: 10px;
 }
 
 .nav-links li a:hover {
