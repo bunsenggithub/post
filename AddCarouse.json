@@ -1,1 +1,6 @@
-
+[
+  { "src": "images/pic1.jpg" },
+  { "src": "images/pic2.jpg" },
+  { "src": "images/pic3.jpg" },
+  { "src": "images/pic4.jpg" }
+]
